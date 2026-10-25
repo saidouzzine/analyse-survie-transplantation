@@ -1,4 +1,4 @@
-# Analyse de survie après transplantation — Étude statistique sous R
+# Analyse de survie après transplantation - Étude statistique sous R
 
 ## Présentation du projet
 
@@ -161,8 +161,40 @@ Le rapport complet présente les fondements théoriques, la méthodologie, les r
 **Saïd OUZZINE**  
 Mathématiques appliquées, statistique et modélisation des données.
 
-## Références méthodologiques
+## Références bibliographiques
 
-Les méthodes utilisées s'appuient notamment sur les travaux fondateurs de Kaplan et Meier (1958), Cox (1972), Aalen et Johansen (1978), Gray (1988) et Fine et Gray (1999), ainsi que sur des publications méthodologiques plus récentes consacrées aux risques concurrents et aux modèles multi-états.
+Les méthodes statistiques utilisées dans ce projet s'appuient sur un ouvrage en accès libre, des supports de cours universitaires français et la documentation officielle des packages R.
 
-La bibliographie détaillée figure dans le rapport scientifique.
+### A. Ouvrage numérique en accès libre
+
+**[1]** Bender, A., & Sonabend, R. *Machine Learning for Survival Analysis*.  
+[Consulter l'ouvrage en ligne](https://www.mlsabook.com/).
+
+### B. Cours et polycopiés universitaires
+
+**[2]** Saint-Pierre, P. *Introduction à l'analyse de survie (analyse des durées de vie)*. Support de cours universitaire, Université Toulouse III – Paul Sabatier, Toulouse, France.  
+[Accéder aux supports de cours](https://perso.math.univ-toulouse.fr/psaintpi/teaching/).
+
+**[3]** Saint-Pierre, P. *Analyse de survie, modèles multi-états et processus de comptage*. Support de cours universitaire, Université Toulouse III – Paul Sabatier, Toulouse, France.  
+[Accéder aux supports de cours](https://perso.math.univ-toulouse.fr/psaintpi/teaching/).
+
+**[4]** Geffray, S. (2008–2009). *Modèles multi-états, risques concurrents et événements récurrents*. Polycopié du cours de Modélisation en survie, Master 2 Pharmacologie clinique et épidémiologie, Université de Nantes, France.  
+[Consulter le polycopié PDF](https://irma.math.unistra.fr/~geffray/cours/cours-nantes/M2coursCompetingRisksRecurrentEvents2008-2009.pdf).
+
+### C. Logiciel et packages statistiques
+
+**[5]** R Core Team. *R: A Language and Environment for Statistical Computing*. R Foundation for Statistical Computing, Vienne, Autriche.  
+[Site officiel de R](https://www.R-project.org/).
+
+**[6]** Therneau, T. M. *survival: Survival Analysis*. Package R, Comprehensive R Archive Network (CRAN).  
+[Documentation officielle — survival](https://doi.org/10.32614/CRAN.package.survival).
+
+**[7]** Gray, B. *cmprsk: Subdistribution Analysis of Competing Risks*. Package R, Comprehensive R Archive Network (CRAN).  
+[Documentation officielle — cmprsk](https://doi.org/10.32614/CRAN.package.cmprsk).
+
+**[8]** Putter, H., de Wreede, L. C., Fiocco, M., et al. *mstate: Data Preparation, Estimation and Prediction in Multi-State Models*. Package R, Comprehensive R Archive Network (CRAN).  
+[Documentation officielle — mstate](https://doi.org/10.32614/CRAN.package.mstate).
+
+---
+
+Pour une présentation détaillée des fondements théoriques, de la méthodologie et des résultats statistiques, se référer au rapport scientifique associé à ce dépôt.
