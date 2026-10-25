@@ -12,7 +12,7 @@ L'étude repose sur une cohorte de **1 835 patients adultes**, sélectionnés à
 
 Ce projet s'inscrit dans une démarche d'application et d'approfondissement des méthodes d'analyse de survie enseignées en Master 2 de statistique et de biostatistique.
 
-Il mobilise des outils classiques et avancés, notamment les estimateurs de Kaplan–Meier et d'Aalen–Johansen, le modèle de Cox, les méthodes de risques concurrents et la régression de Fine–Gray.
+Il mobilise des outils classiques et avancés, notamment les estimateurs de Kaplan-Meier et d'Aalen-Johansen, le modèle de Cox, les méthodes de risques concurrents et la régression de Fine-Gray.
 
 L'objectif n'est pas de développer de nouveaux estimateurs, mais de mettre en œuvre, comparer et interpréter rigoureusement plusieurs approches statistiques sur une même cohorte, en explicitant leurs hypothèses, leurs paramètres d'intérêt et leurs limites.
 
