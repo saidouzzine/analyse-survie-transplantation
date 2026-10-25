@@ -87,7 +87,7 @@ Le diagnostic global fondé sur les résidus de Schoenfeld ne met pas en éviden
 
 Le modèle *illness–death* distingue les décès survenus sans rechute préalable de ceux observés après une rechute.
 
-### Régression de Fine–Gray
+### Régression de Fine-Gray
 
 Le modèle standard estime un rapport de risques de sous-distribution (**sHR**) de **1,32** pour *Medium risk* et de **1,83** pour *High risk*, par rapport à *Low risk*.
 
