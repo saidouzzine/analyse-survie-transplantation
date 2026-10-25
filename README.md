@@ -172,11 +172,9 @@ Les méthodes statistiques utilisées dans ce projet s'appuient sur un ouvrage e
 
 ### B. Cours et polycopiés universitaires
 
-**[2]** Saint-Pierre, P. *Introduction à l'analyse de survie (analyse des durées de vie)*. Support de cours universitaire, Université Toulouse III – Paul Sabatier, Toulouse, France.  
-[Accéder aux supports de cours](https://perso.math.univ-toulouse.fr/psaintpi/teaching/).
+**[2]** Saint-Pierre, P. *Introduction à l'analyse de survie (analyse des durées de vie)*. Support de cours universitaire, Université Toulouse III – Paul Sabatier, Toulouse, France.
 
-**[3]** Saint-Pierre, P. *Analyse de survie, modèles multi-états et processus de comptage*. Support de cours universitaire, Université Toulouse III – Paul Sabatier, Toulouse, France.  
-[Accéder aux supports de cours](https://perso.math.univ-toulouse.fr/psaintpi/teaching/).
+**[3]** Saint-Pierre, P. *Analyse de survie, modèles multi-états et processus de comptage*. Support de cours universitaire, Université Toulouse III – Paul Sabatier, Toulouse, France.
 
 **[4]** Geffray, S. (2008–2009). *Modèles multi-états, risques concurrents et événements récurrents*. Polycopié du cours de Modélisation en survie, Master 2 Pharmacologie clinique et épidémiologie, Université de Nantes, France.  
 [Consulter le polycopié PDF](https://irma.math.unistra.fr/~geffray/cours/cours-nantes/M2coursCompetingRisksRecurrentEvents2008-2009.pdf).
