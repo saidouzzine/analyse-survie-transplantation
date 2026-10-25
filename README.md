@@ -6,7 +6,7 @@ Ce projet propose une analyse statistique des trajectoires cliniques après tran
 
 L'objectif est d'étudier la survie globale, la survenue d'une rechute et la mortalité après transplantation, en tenant compte de la censure, des événements concurrents et des transitions successives entre états cliniques.
 
-L'étude repose sur une cohorte de **1 835 patients adultes**, sélectionnés à partir d'une base initiale de 1 977 patients. Six analyses complémentaires sont réalisées sous **R**, depuis l'estimation non paramétrique de la survie jusqu'aux modèles multi-états et à la régression de Fine–Gray
+L'étude repose sur une cohorte de **1 835 patients adultes**, sélectionnés à partir d'une base initiale de 1 977 patients. Six analyses complémentaires sont réalisées sous **R**, depuis l'estimation non paramétrique de la survie jusqu'aux modèles multi-états et à la régression de Fine-Gray
 
 ## Positionnement méthodologique
 
