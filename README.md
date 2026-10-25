@@ -46,17 +46,17 @@ Le projet est organisé autour de six scripts R :
 | Script | Analyse | Méthode |
 |---|---|---|
 | `01_import.R` | Préparation de la cohorte | Contrôles, sélection des adultes et définition des événements |
-| `02_kaplan_meier.R` | Survie globale | Kaplan–Meier et test du log-rank |
+| `02_kaplan_meier.R` | Survie globale | Kaplan-Meier et test du log-rank |
 | `03_cox.R` | Facteurs associés à la mortalité | Modèle de Cox et résidus de Schoenfeld |
 | `04_competing_risks.R` | Rechute et décès sans rechute | Fonctions d'incidence cumulée |
-| `05_multistate.R` | Trajectoires post-transplantation | Modèle *illness–death* et estimateur d'Aalen–Johansen |
-| `06_fine_gray.R` | Incidence cumulée de rechute selon le score | Modèle de Fine–Gray, test de Gray et interactions temporelles |
+| `05_multistate.R` | Trajectoires post-transplantation | Modèle *illness-death* et estimateur d'Aalen-Johansen |
+| `06_fine_gray.R` | Incidence cumulée de rechute selon le score | Modèle de Fine-Gray, test de Gray et interactions temporelles |
 
 Ces méthodes répondent à des questions statistiques distinctes et sont utilisées de manière complémentaire.
 
 ## Principaux résultats
 
-### Survie globale — Kaplan–Meier
+### Survie globale - Kaplan-Meier
 
 La survie globale estimée est de **63,9 % à un an**, **52,3 % à cinq ans** et **48,6 % à huit ans**.
 
@@ -97,12 +97,12 @@ L'ajout d'interactions temporelles met en évidence une variation statistiquemen
 
 Le rapport scientifique comprend sept figures :
 
-1. Courbe de survie globale estimée par Kaplan–Meier, avec intervalle de confiance à 95 %.
+1. Courbe de survie globale estimée par Kaplan-Meier, avec intervalle de confiance à 95 %.
 2. Courbes de survie globale selon le score de Gratwohl.
 3. Diagnostic de proportionnalité des risques du modèle de Cox par les résidus de Schoenfeld.
 4. Incidences cumulées de la rechute et du décès sans rechute.
-5. Schéma du modèle *illness–death* à trois états et transitions autorisées.
-6. Évolution des probabilités d'occupation des trois états estimées par Aalen–Johansen.
+5. Schéma du modèle *illness-death* à trois états et transitions autorisées.
+6. Évolution des probabilités d'occupation des trois états estimées par Aalen-Johansen.
 7. Incidences cumulées de rechute et de décès sans rechute selon le groupe de risque.
 
 Les figures complètent les estimations numériques et facilitent la lecture des évolutions temporelles.
@@ -114,7 +114,7 @@ Les figures complètent les estimations numériques et facilitent la lecture des
 Le projet utilise **R** et principalement les packages suivants :
 
 - `survival` : estimation de Kaplan–Meier, modèle de Cox et diagnostics ;
-- `cmprsk` : incidences cumulées, test de Gray et régression de Fine–Gray ;
+- `cmprsk` : incidences cumulées, test de Gray et régression de Fine-Gray ;
 - `mstate` : modèles multi-états et probabilités de transition.
 
 Pour installer ces packages :
