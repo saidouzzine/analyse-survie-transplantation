@@ -1,2 +1,168 @@
-# analyse-survie-transplantation
-Analyse statistique de survie après transplantation : Kaplan-Meier, Cox, risques concurrents, modèles multi-états et Fine-Gray sous R.
+# Analyse de survie après transplantation — Étude statistique sous R
+
+## Présentation du projet
+
+Ce projet propose une analyse statistique des trajectoires cliniques après transplantation chez des patients atteints de leucémie myéloïde chronique.
+
+L'objectif est d'étudier la survie globale, la survenue d'une rechute et la mortalité après transplantation, en tenant compte de la censure, des événements concurrents et des transitions successives entre états cliniques.
+
+L'étude repose sur une cohorte de **1 835 patients adultes**, sélectionnés à partir d'une base initiale de 1 977 patients. Six analyses complémentaires sont réalisées sous **R**, depuis l'estimation non paramétrique de la survie jusqu'aux modèles multi-états et à la régression de Fine–Gray
+
+## Positionnement méthodologique
+
+Ce projet s'inscrit dans une démarche d'application et d'approfondissement des méthodes d'analyse de survie enseignées en Master 2 de statistique et de biostatistique.
+
+Il mobilise des outils classiques et avancés, notamment les estimateurs de Kaplan–Meier et d'Aalen–Johansen, le modèle de Cox, les méthodes de risques concurrents et la régression de Fine–Gray.
+
+L'objectif n'est pas de développer de nouveaux estimateurs, mais de mettre en œuvre, comparer et interpréter rigoureusement plusieurs approches statistiques sur une même cohorte, en explicitant leurs hypothèses, leurs paramètres d'intérêt et leurs limites.
+
+## Objectifs scientifiques
+
+- Estimer la probabilité de survie globale après transplantation.
+- Comparer la survie selon le score de risque de Gratwohl.
+- Étudier l'association du score et de l'âge avec le risque instantané de décès.
+- Estimer les probabilités de rechute et de décès sans rechute en présence de risques concurrents.
+- Décrire l'évolution des probabilités d'être vivant sans rechute, vivant après rechute ou décédé.
+- Étudier l'association du score avec l'incidence cumulée de rechute et son éventuelle variation au cours du temps.
+
+## Données et population étudiée
+
+La base initiale comprend **1 977 patients**. Après exclusion de 142 patients mineurs, la population d'analyse comporte **1 835 adultes**.
+
+| Premier événement | Effectif |
+|---|---:|
+| Censure | 773 |
+| Rechute | 421 |
+| Décès sans rechute préalable | 641 |
+| **Total** | **1 835** |
+
+Au total, **809 décès** sont observés, dont **168 après une rechute**. Les durées de suivi sont mesurées depuis la transplantation et présentées en années (conversion des jours par division par 365,25).
+
+
+## Méthodologie statistique
+
+Le projet est organisé autour de six scripts R :
+
+| Script | Analyse | Méthode |
+|---|---|---|
+| `01_import.R` | Préparation de la cohorte | Contrôles, sélection des adultes et définition des événements |
+| `02_kaplan_meier.R` | Survie globale | Kaplan–Meier et test du log-rank |
+| `03_cox.R` | Facteurs associés à la mortalité | Modèle de Cox et résidus de Schoenfeld |
+| `04_competing_risks.R` | Rechute et décès sans rechute | Fonctions d'incidence cumulée |
+| `05_multistate.R` | Trajectoires post-transplantation | Modèle *illness–death* et estimateur d'Aalen–Johansen |
+| `06_fine_gray.R` | Incidence cumulée de rechute selon le score | Modèle de Fine–Gray, test de Gray et interactions temporelles |
+
+Ces méthodes répondent à des questions statistiques distinctes et sont utilisées de manière complémentaire.
+
+## Principaux résultats
+
+### Survie globale — Kaplan–Meier
+
+La survie globale estimée est de **63,9 % à un an**, **52,3 % à cinq ans** et **48,6 % à huit ans**.
+
+À cinq ans, elle est de **75,2 %** pour le groupe *Low risk*, **50,5 %** pour *Medium risk* et **17,4 %** pour *High risk*. Le test global du log-rank met en évidence une différence entre les groupes (p = 2,41 × 10⁻²⁵).
+
+### Modèle de Cox
+
+Après ajustement sur l'âge et par rapport au groupe *Low risk*, les rapports de risques instantanés de décès sont estimés à :
+
+- **HR = 2,19** pour *Medium risk* (IC à 95 % : [1,72 ; 2,80]).
+- **HR = 4,47** pour *High risk* (IC à 95 % : [3,31 ; 6,04]).
+
+Le diagnostic global fondé sur les résidus de Schoenfeld ne met pas en évidence de violation statistiquement détectable de l'hypothèse de proportionnalité (p = 0,20).
+
+### Risques concurrents
+
+À cinq ans, les incidences cumulées estimées sont de **25,80 % pour la rechute** et de **36,67 % pour le décès sans rechute**. Ces probabilités tiennent compte de la compétition entre les événements lorsqu'on étudie le premier événement après transplantation.
+
+### Modèle multi-états
+
+À cinq ans, les probabilités d'occupation estimées par Aalen–Johansen sont :
+
+| État clinique | Probabilité à cinq ans |
+|---|---:|
+| Vivant sans rechute | 37,53 % |
+| Vivant après rechute | 14,65 % |
+| Décédé | 47,82 % |
+
+Le modèle *illness–death* distingue les décès survenus sans rechute préalable de ceux observés après une rechute.
+
+### Régression de Fine–Gray
+
+Le modèle standard estime un rapport de risques de sous-distribution (**sHR**) de **1,32** pour *Medium risk* et de **1,83** pour *High risk*, par rapport à *Low risk*.
+
+L'ajout d'interactions temporelles met en évidence une variation statistiquement significative des effets du score (test global de Wald : p = 0,000192). Les sHR constants doivent donc être interprétés avec prudence.
+
+## Figures et visualisations
+
+Le rapport scientifique comprend sept figures :
+
+1. Courbe de survie globale estimée par Kaplan–Meier, avec intervalle de confiance à 95 %.
+2. Courbes de survie globale selon le score de Gratwohl.
+3. Diagnostic de proportionnalité des risques du modèle de Cox par les résidus de Schoenfeld.
+4. Incidences cumulées de la rechute et du décès sans rechute.
+5. Schéma du modèle *illness–death* à trois états et transitions autorisées.
+6. Évolution des probabilités d'occupation des trois états estimées par Aalen–Johansen.
+7. Incidences cumulées de rechute et de décès sans rechute selon le groupe de risque.
+
+Les figures complètent les estimations numériques et facilitent la lecture des évolutions temporelles.
+
+## Reproductibilité
+
+### Environnement
+
+Le projet utilise **R** et principalement les packages suivants :
+
+- `survival` : estimation de Kaplan–Meier, modèle de Cox et diagnostics ;
+- `cmprsk` : incidences cumulées, test de Gray et régression de Fine–Gray ;
+- `mstate` : modèles multi-états et probabilités de transition.
+
+Pour installer ces packages :
+
+```r
+install.packages(c("survival", "cmprsk", "mstate"))
+```
+
+### Exécution des analyses
+
+1. Installer R et les packages requis.
+2. Obtenir, sous réserve d'autorisation, les données sources et les placer à l'emplacement attendu par le script d'importation.
+3. Depuis la racine du projet, exécuter les scripts dans l'ordre :
+
+```bash
+Rscript scripts/01_import.R
+Rscript scripts/02_kaplan_meier.R
+Rscript scripts/03_cox.R
+Rscript scripts/04_competing_risks.R
+Rscript scripts/05_multistate.R
+Rscript scripts/06_fine_gray.R
+```
+
+4. Comparer les sorties numériques, les diagnostics et les figures avec le rapport scientifique.
+
+**Remarque :** les commandes ci-dessus supposent que les scripts sont rangés dans un dossier `scripts/`. Adapter les chemins si l'arborescence réelle est différente. Le script multi-états lit notamment `data/leucemie2.rds`, qui doit être disponible après la préparation de la cohorte.
+
+## Limites de l'étude
+
+Les analyses sont **observationnelles** et ne permettent pas d'établir des relations causales. Elles reposent notamment sur une hypothèse de censure suffisamment non informative et, selon les modèles, sur des hypothèses de proportionnalité ou de structure des transitions.
+
+L'ajustement sur les facteurs pronostiques reste limité. Les estimations tardives peuvent également être moins précises lorsque le nombre de patients encore suivis diminue. Enfin, les diagnostics du modèle de Fine–Gray suggèrent une association entre le score et l'incidence cumulée de rechute qui varie au cours du temps.
+
+## Rapport scientifique
+
+Le rapport complet présente les fondements théoriques, la méthodologie, les résultats détaillés, les figures, les diagnostics statistiques, les limites et les références bibliographiques.
+
+**Analyse de survie après transplantation — Rapport scientifique, octobre 2026.**
+
+[Consulter le rapport complet (PDF)](rapport_analyse_survie.pdf)
+
+## Auteur
+
+**Saïd OUZZINE**  
+Mathématiques appliquées, statistique et modélisation des données.
+
+## Références méthodologiques
+
+Les méthodes utilisées s'appuient notamment sur les travaux fondateurs de Kaplan et Meier (1958), Cox (1972), Aalen et Johansen (1978), Gray (1988) et Fine et Gray (1999), ainsi que sur des publications méthodologiques plus récentes consacrées aux risques concurrents et aux modèles multi-états.
+
+La bibliographie détaillée figure dans le rapport scientifique.
