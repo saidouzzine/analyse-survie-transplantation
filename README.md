@@ -145,7 +145,7 @@ Rscript scripts/06_fine_gray.R
 
 Les analyses sont **observationnelles** et ne permettent pas d'établir des relations causales. Elles reposent notamment sur une hypothèse de censure suffisamment non informative et, selon les modèles, sur des hypothèses de proportionnalité ou de structure des transitions.
 
-L'ajustement sur les facteurs pronostiques reste limité. Les estimations tardives peuvent également être moins précises lorsque le nombre de patients encore suivis diminue. Enfin, les diagnostics du modèle de Fine–Gray suggèrent une association entre le score et l'incidence cumulée de rechute qui varie au cours du temps.
+L'ajustement sur les facteurs pronostiques reste limité. Les estimations tardives peuvent également être moins précises lorsque le nombre de patients encore suivis diminue. Enfin, les diagnostics du modèle de Fine-Gray suggèrent une association entre le score et l'incidence cumulée de rechute qui varie au cours du temps.
 
 ## Rapport scientifique
 
