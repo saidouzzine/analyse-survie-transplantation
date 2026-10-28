@@ -1,6 +1,6 @@
 # Lecture et validation des données originales
 path <- "data/leukemia.csv"
-if (!file.exists(path)) stop("Placer leukemia.csv dans data/ (usage local uniquement).")
+if (!file.exists(path)) stop("Fichier data/leukemia.csv introuvable : exécuter les scripts depuis la racine du projet.")
 raw <- readLines(path, warn=FALSE)
 raw <- sub('^"', '', raw)
 raw <- sub('"$', '', raw)
