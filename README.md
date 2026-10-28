@@ -125,11 +125,11 @@ install.packages(c("survival", "cmprsk", "mstate"))
 
 ### Exécution des analyses
 
-1. Installer R et les packages requis.
-2. Obtenir, sous réserve d'autorisation, les données sources et les placer à l'emplacement attendu par le script d'importation.
+1. Installer R et les packages requis (voir la section « Environnement »).
+2. Les données sources sont fournies dans le dépôt : le fichier `data/leukemia.csv` est lu directement par le script d'importation. Aucun téléchargement n'est nécessaire.
 3. Depuis la racine du projet, exécuter les scripts dans l'ordre :
 
-```bash
+```
 Rscript scripts/01_import.R
 Rscript scripts/02_kaplan_meier.R
 Rscript scripts/03_cox.R
@@ -137,10 +137,9 @@ Rscript scripts/04_competing_risks.R
 Rscript scripts/05_multistate.R
 Rscript scripts/06_fine_gray.R
 ```
+4. Comparer les sorties numériques, les diagnostics et les figures avec le rapport scientifique (`rapport_analyse_survie.pdf`).
 
-4. Comparer les sorties numériques, les diagnostics et les figures avec le rapport scientifique.
-
-**Remarque :** les commandes ci-dessus supposent que les scripts sont rangés dans un dossier `scripts/`. Adapter les chemins si l'arborescence réelle est différente. Le script multi-états lit notamment `data/leucemie2.rds`, qui doit être disponible après la préparation de la cohorte.
+**Remarque :** le script `01_import.R` prépare la cohorte (sélection des adultes, définition des événements) et génère le fichier intermédiaire `data/leucemie2.rds`, utilisé ensuite par `05_multistate.R`. Les scripts doivent donc être exécutés dans l'ordre indiqué.
 
 ## Limites de l'étude
 
